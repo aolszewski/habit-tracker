@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class="yourHabits">Your Habits</div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+
+            <!-- //ADD HABITS -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <hr>
+                        {{!-- <form action="/api/insert_habit" method="POST"> --}}
+                        <form id="add-habit">
+                            <div class="form-group">
+                                <input type="hidden" name="userId" value="{{id}}">
+                                <input class="form-control" name="habitName" id="habitName" type="text"
+                                    placeholder="Enter your new habit">
+                                <br>
+                                <button type="submit" class="btn btn-info" id="createHabit">Create
+                                    Habit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //HABITS WILL SHOW UP IF THEY ARE ENTERED -->
+            {{#each habits}}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        {{!-- {{#if completed}} --}}
+                        <h4 class="card-title green">{{this.name}}</h4>
+                        {{!-- <h3>this task was completed</h3> --}}
+                        {{!-- {{/if}}{{else}} --}}
+                        {{!-- <h4 class="card-title red">Habit</h4> --}}
+                        {{!-- {{/else}} --}}
+                        <hr>
+
+                        <button type="button" class="btn btn-info" id="deleteHabit">COMPLETE</button>
+
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
